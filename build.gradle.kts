@@ -7,10 +7,10 @@ import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 plugins {
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
-    id("org.springframework.boot") version "3.4.1"
+    id("org.springframework.boot") version "3.4.4"
     id("io.spring.dependency-management") version "1.1.7"
     id("com.gorylenko.gradle-git-properties") version "2.4.2"
-    id("com.diffplug.spotless") version "7.0.0.BETA4"
+    id("com.diffplug.spotless") version "7.0.3"
 }
 
 group = "com.sivalabs.ft"
@@ -87,7 +87,7 @@ gitProperties {
 spotless {
     kotlin {
         trimTrailingWhitespace()
-        indentWithSpaces(4)
+        leadingTabsToSpaces(4)
         endWithNewline()
         ktlint("1.4.1")
     }
