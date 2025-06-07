@@ -33,7 +33,7 @@ repositories {
     maven { url = uri("https://repo.spring.io/milestone") }
 }
 
-extra["springCloudVersion"] = "2025.0.0-RC1"
+extra["springCloudVersion"] = "2025.0.0"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
