@@ -10,7 +10,7 @@ plugins {
     id("org.springframework.boot") version "3.5.1"
     id("io.spring.dependency-management") version "1.1.7"
     id("com.gorylenko.gradle-git-properties") version "2.4.2"
-    id("com.diffplug.spotless") version "7.0.3"
+    id("com.diffplug.spotless") version "7.0.4"
 }
 
 group = "com.sivalabs.ft"
