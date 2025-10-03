@@ -16,10 +16,11 @@ plugins {
 group = "com.sivalabs.ft"
 version = "0.0.2-SNAPSHOT"
 
-val dockerImageName: String = project
-    .findProperty("dockerImageName")
-    ?.let { it as String }
-    ?: "sivaprasadreddy/ft-notification-service"
+val dockerImageName: String =
+    project
+        .findProperty("dockerImageName")
+        ?.let { it as String }
+        ?: "sivaprasadreddy/ft-notification-service"
 
 java {
     toolchain {
