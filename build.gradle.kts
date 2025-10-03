@@ -15,7 +15,11 @@ plugins {
 
 group = "com.sivalabs.ft"
 version = "0.0.2-SNAPSHOT"
-var dockerImageName = "sivaprasadreddy/ft-notification-service"
+
+val dockerImageName: String = project
+    .findProperty("dockerImageName")
+    ?.let { it as String }
+    ?: "sivaprasadreddy/ft-notification-service"
 
 java {
     toolchain {
@@ -82,12 +86,6 @@ tasks.withType<Test> {
 
 tasks.withType<BootBuildImage> {
     imageName.set(dockerImageName)
-    tags.set(
-        listOf(
-            "$dockerImageName:${project.version}",
-            "$dockerImageName:latest",
-        ),
-    )
 }
 
 gitProperties {
