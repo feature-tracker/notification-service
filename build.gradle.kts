@@ -7,7 +7,7 @@ import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 plugins {
     kotlin("jvm") version "2.2.20"
     kotlin("plugin.spring") version "2.2.20"
-    id("org.springframework.boot") version "3.5.6"
+    id("org.springframework.boot") version "3.5.10"
     id("io.spring.dependency-management") version "1.1.7"
     id("com.gorylenko.gradle-git-properties") version "2.5.3"
     id("com.diffplug.spotless") version "8.0.0"
@@ -39,7 +39,8 @@ repositories {
     maven { url = uri("https://repo.spring.io/milestone") }
 }
 
-extra["springCloudVersion"] = "2025.0.0"
+extra["springCloudVersion"] = "2025.0.1"
+extra["testcontainers.version"] = "2.0.3"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -56,8 +57,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.springframework.kafka:spring-kafka-test")
-    testImplementation("org.testcontainers:junit-jupiter")
-    testImplementation("org.testcontainers:kafka")
+    testImplementation("org.testcontainers:testcontainers-junit-jupiter")
+    testImplementation("org.testcontainers:testcontainers-kafka")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
